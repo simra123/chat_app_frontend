@@ -1,5 +1,5 @@
 //react hooks
-import { useContext, Fragment } from 'react'
+import { useContext, Fragment, useState } from 'react'
 //global states
 import { User, ChatVisibility } from '../../useContext'
 
@@ -8,15 +8,19 @@ const NameForm = () => {
     //accessing the global states
     const [name, setName] = useContext(User)
     const [showChat, setShowChat] = useContext(ChatVisibility)
+    const [error, setError] = useState(null)
 
     //updating states
     const onSubmit = (e) => {
         //to prevent refresh
         e.preventDefault()
         //after name is sent, allow chat page to render
-        setShowChat(true)
+        if (name !== '') {
+            setShowChat(true)
+        } else {
+            setError('Please provide a name')
+        }
     }
-
 
     return (
         <Fragment>
@@ -31,6 +35,7 @@ const NameForm = () => {
                             <form onSubmit={ (e) => onSubmit(e) }>
                                 <label>Join Chat</label><br />
                                 <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } placeholder='Enter your name' /><br />
+                                <span className='error'>{ error }</span>
                                 <button> Enter</button>
                             </form>
                         </div>
