@@ -1,0 +1,83 @@
+$background : rgb(202, 198, 198) ;
+$mainColor : purple;
+$shadow:  2px 3px 26px 5px rgba(151, 145, 140, 0.596) ;
+$incomin: rgb(139, 107, 131);
+$goin: rgba(57, 57, 128, 0.486);
+//end points 
+$breakpoint-mobile: 340px;
+$breakpoint-tablet: 730px;
+
+
+
+//bouncein animation
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+ 
+  //fade in animation
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+//functions
+//to center a div
+@mixin centerDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+//fadeIn mixin
+@mixin fadeIn {
+animation-name: fadeIn;
+animation-duration: 700ms;
+
+}
+//bounceIn mixin
+@mixin  bounceIn {
+animation-duration: 700ms;
+animation-name: bounceIn;
+}
