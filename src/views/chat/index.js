@@ -39,7 +39,7 @@ const Chat = () => {
             //send data to server
             socket.emit('send_messages', chatData)
             //saves data to context
-            setChat((chat) => [...chat, chatData])
+            setChat([...chat, chatData])
             //nulls the current state//message
             setMessage('')
 
@@ -51,13 +51,12 @@ const Chat = () => {
         //geting chats
         socket.on('receive_messages', (data) => {
             setChat((chat) => [...chat, data])
-            console.log(data)
         })
         //geting user active status
         socket.on('is_active', (data) => {
             setIsActive(data.status)
         })
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <Fragment>

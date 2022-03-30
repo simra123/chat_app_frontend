@@ -16,7 +16,7 @@ const MessagesArea = () => {
                 //maping thru the array
                 chat.map((value, index) => {
                     return (
-                        <div className={ name == value.username ? "outcoming" : "incoming" }>
+                        <div key={ index } className={ name === value.username ? "outcoming" : "incoming" }>
                             <p className='content'>{ value.message }</p> <span className='time'>{ value.time }</span><span className='name'>{ value.username }</span>
                         </div>
                     )
