@@ -1,8 +1,8 @@
 simple react live chat app using socketio
-#backend server
+# backend server
 https://github.com/simra123/chatapp_server
 
-Built with
+# Built with
 ~ React js
 ~ Custom Sass
 ~ Context Api
