@@ -16,3 +16,7 @@ src > useContext > all global State <br>
 src > views > reuseble > all components blocks <br>
 src > views > chat > main chat page <br>
 src > views > form > name Form <br>
+
+# To Run
+npm install <br>
+npm start <br>
