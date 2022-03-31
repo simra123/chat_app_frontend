@@ -7,7 +7,7 @@ const ChatFooter = ({ sendChat, message, setMessage }) => {
         //sends single message thru props
         <form onSubmit={ (e) => sendChat(e) }>
             <div className='chat_footer'>
-                <input placeholder='Enter your name msg' value={ message } onChange={ (e) => setMessage(e.target.value) } />
+                <input placeholder='Type Message' value={ message } onChange={ (e) => setMessage(e.target.value) } />
                 {/* submit icon */ }
                 <button>
                     <RiSendPlane2Fill size={ 30 } />
